@@ -7,7 +7,7 @@ function LandingPage() {
             <header style={styles.header}>
                 <h1 style={styles.title}>Teruya Consultoria</h1>
                 <p style={styles.subtitle}>
-                    Transformamos dados em soluções inteligentes. Especialistas em BI, ETL, Relatórios e Automação.
+                    Transformamos dados em soluções inteligentes. Especialistas em BI, ETL, Relatórios e Automação e TESTES.
                 </p>
                 <button style={styles.button}>Saiba Mais</button>
             </header>
