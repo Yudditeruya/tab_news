@@ -7,9 +7,16 @@ function LandingPage() {
             <header style={styles.header}>
                 <h1 style={styles.title}>Teruya Consultoria</h1>
                 <p style={styles.subtitle}>
-                    Transformamos dados em soluções inteligentes. Especialistas em BI, ETL, Relatórios e Automação e TESTES.
+                    Transformamos dados em soluções inteligentes. Especialistas em BI, ETL, Relatórios e Automação.
                 </p>
-                <button style={styles.button}>Saiba Mais</button>
+                <a
+                    href="https://wa.me/5567999614879?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Teruya%20Consultoria."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={styles.button}
+                >
+                    Saiba Mais
+                </a>
             </header>
 
             {/* Imagem de dashboard */}
@@ -35,7 +42,7 @@ function LandingPage() {
             {/* Contato */}
             <section style={styles.contactSection}>
                 <h2>Entre em Contato</h2>
-                <p>Telefone: <a href="tel:+5511999999999" style={styles.link}>+55 (11) 99999-9999</a></p>
+                <p>Telefone: <a href="tel:+5567999614879" style={styles.link}>+55 (67) 99961-4879</a></p>
                 <p>Email: <a href="mailto:contato@teruyaconsultoria.com" style={styles.link}>contato@teruyaconsultoria.com</a></p>
             </section>
 
@@ -69,12 +76,14 @@ const styles = {
         margin: '20px 0',
     },
     button: {
+        display: 'inline-block',
         padding: '10px 20px',
         fontSize: '1em',
         color: '#fff',
         backgroundColor: '#333',
         border: 'none',
         borderRadius: '5px',
+        textDecoration: 'none',
         cursor: 'pointer',
     },
     imageSection: {
