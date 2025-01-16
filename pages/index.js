@@ -49,9 +49,15 @@ export default function Home() {
         <h1>Nossos Clientes</h1>
         <p>Clientes satisfeitos são nosso maior patrimônio.</p>
         <div style={styles.clients}>
-          <div style={styles.clientLogo}>Logo Cliente 1</div>
-          <div style={styles.clientLogo}>Logo Cliente 2</div>
-          <div style={styles.clientLogo}>Logo Cliente 3</div>
+          <div style={styles.clientLogo}>
+            <img src="/enzo.png" alt="Grupo Enzo" style={styles.image} />
+          </div>
+          <div style={styles.clientLogo}>
+            <img src="/sebrae.png" alt="SEBRAE" style={styles.image} />
+          </div>
+          <div style={styles.clientLogo}>
+            <img src="/prefeituracg.jpeg" alt="Prefeitura de CG" style={styles.image} />
+          </div>
         </div>
       </section>
 
@@ -72,13 +78,12 @@ export default function Home() {
   );
 }
 
-// Estilos Inline
 const styles = {
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#0044cc',
+    backgroundColor: '#003366',
     color: 'white',
     padding: '10px 20px',
   },
@@ -93,10 +98,12 @@ const styles = {
   link: {
     color: 'white',
     textDecoration: 'none',
+    fontWeight: 'bold',
   },
   section: {
     padding: '50px 20px',
     textAlign: 'center',
+    backgroundColor: '#f5f5f5',
   },
   services: {
     display: 'grid',
@@ -105,10 +112,11 @@ const styles = {
     marginTop: '20px',
   },
   serviceCard: {
-    background: '#f4f4f4',
+    background: 'white',
     padding: '20px',
     borderRadius: '8px',
-    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
   },
   clients: {
     display: 'flex',
@@ -126,8 +134,13 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    maxWidth: '100%',
+    maxHeight: '100%',
+    objectFit: 'contain',
+  },
   footer: {
-    backgroundColor: '#333',
+    backgroundColor: '#003366',
     color: 'white',
     textAlign: 'center',
     padding: '20px 0',
