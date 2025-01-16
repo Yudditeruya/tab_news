@@ -48,14 +48,6 @@ const WhoWeAre = () => (
           Na <strong>Teruya Consultoria</strong>, nosso propósito é transformar dados em insights estratégicos que impulsionam o sucesso dos nossos clientes. 
           Com mais de 6 anos de experiência, oferecemos soluções em Business Intelligence, automação e integração de dados.
         </p>
-        <p style={styles.text}>Nossos serviços incluem:</p>
-        <ul style={styles.serviceList}>
-          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Business Intelligence (BI)</li>
-          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Integração de dados com fontes diferentes</li>
-          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Modelagem de dados (Star Schema e SnowFlake)</li>
-          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Data WareHouse e Data Mart</li>
-          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Relatórios e dashboards personalizados</li>
-        </ul>
       </div>
 
       {/* Foto */}
@@ -179,6 +171,8 @@ const styles = {
     flexDirection: 'row-reverse',
   },
   photoContainerRight: {
+    width: '120px',
+    height: 'auto',
     flex: 1,
     textAlign: 'center',
   },
