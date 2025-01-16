@@ -3,7 +3,7 @@ const WhoWeAre = () => (
     <div style={styles.whoWeAreContainer}>
       {/* Foto */}
       <div style={styles.imageContainer}>
-        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
+        <img src="/Yuddi.png" alt="Minha Foto" style={styles.profileImage} />
       </div>
 
       {/* Texto */}
@@ -42,6 +42,80 @@ export default function Home() {
   );
 }
 
+// Componente Cabeçalho
+const Header = () => (
+  <header style={styles.header}>
+    <div style={styles.logo}>Teruya Consultoria</div>
+    <nav style={styles.nav}>
+      <a href="#quem-somos" style={styles.link}>Quem Somos</a>
+      <a href="#servicos" style={styles.link}>Serviços</a>
+      <a href="#clientes" style={styles.link}>Clientes</a>
+      <a href="#contato" style={styles.link}>Contato</a>
+    </nav>
+  </header>
+);
+
+// Componente Seção de Serviços
+const Services = () => (
+  <section id="servicos" style={styles.section}>
+    <h1 style={styles.title}>Nossos Serviços</h1>
+    <div style={styles.services}>
+      {[
+        { title: 'Business Intelligence (BI)', desc: 'Estratégias inteligentes baseadas em dados.' },
+        { title: 'ETL', desc: 'Integração de dados eficiente e segura.' },
+        { title: 'Relatórios Personalizados', desc: 'Informações detalhadas e úteis.' },
+        { title: 'Automação', desc: 'Otimização de processos para seu negócio.' },
+      ].map((service, index) => (
+        <div key={index} style={styles.serviceCard}>
+          <h2 style={styles.cardTitle}>{service.title}</h2>
+          <p style={styles.cardText}>{service.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+// Componente Seção de Clientes
+const Clients = () => (
+  <section id="clientes" style={styles.section}>
+    <h1 style={styles.title}>Nossos Clientes</h1>
+    <p style={styles.text}>Clientes satisfeitos são nosso maior patrimônio.</p>
+    <div style={styles.clients}>
+      {[
+        { src: '/enzo.png', alt: 'Grupo Enzo' },
+        { src: '/sebrae.png', alt: 'SEBRAE' },
+        { src: '/prefeituracg.jpeg', alt: 'Prefeitura de CG' },
+      ].map((client, index) => (
+        <div key={index} style={styles.clientLogo}>
+          <img src={client.src} alt={client.alt} style={styles.image} />
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+// Componente Seção de Contato
+const Contact = () => (
+  <section id="contato" style={styles.section}>
+    <h1 style={styles.title}>Contato</h1>
+    <p style={styles.text}>Entre em contato conosco para saber mais sobre nossas soluções.</p>
+    <p style={styles.text}>
+      WhatsApp: <a href="https://wa.me/5567999614879" style={styles.contactLink}>+55 (67) 99961-4879</a>
+    </p>
+    <p style={styles.text}>
+      Email: <a href="mailto:teruyayuddi@gmail.com" style={styles.contactLink}>teruyayuddi@gmail.com</a>
+    </p>
+  </section>
+);
+
+// Componente Rodapé
+const Footer = () => (
+  <footer style={styles.footer}>
+    <p style={styles.text}>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
+    <p style={styles.text}>Desenvolvido por Teruya Consultoria</p>
+  </footer>
+);
+
 // Estilos
 const styles = {
   body: {
@@ -68,22 +142,22 @@ const styles = {
   whoWeAreContainer: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
     gap: '20px',
   },
   imageContainer: {
-    flex: 1,
+    flex: '1',
     textAlign: 'center',
   },
   profileImage: {
-    maxWidth: '100%',
+    maxWidth: '90%',
     height: 'auto',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   },
   textContainer: {
-    flex: 1,
+    flex: '1',
     textAlign: 'left',
   },
   title: {
@@ -93,5 +167,37 @@ const styles = {
   text: {
     fontSize: '1em',
     color: '#555',
+  },
+  contactLink: {
+    color: '#003366', // Azul escuro
+    textDecoration: 'none',
+    fontWeight: 'bold',
+  },
+  clients: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '20px',
+    marginTop: '20px',
+  },
+  clientLogo: {
+    background: '#eaeaea',
+    borderRadius: '8px',
+    width: '200px',
+    height: '150px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  image: {
+    maxWidth: '100%',
+    maxHeight: '100%',
+    objectFit: 'contain',
+  },
+  footer: {
+    backgroundColor: '#003366',
+    color: 'white',
+    textAlign: 'center',
+    padding: '20px 0',
   },
 };
