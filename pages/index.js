@@ -52,7 +52,7 @@ const WhoWeAre = () => (
 
       {/* Foto */}
       <div style={styles.photoContainerRight}>
-        <img src="/logo-teruya.jpg" alt="Logo Teruya Consultoria" style={styles.photo} />
+        <img src="/logo-teruya.jpg" alt="Logo Teruya Consultoria" style={styles.largePhoto} />
       </div>
     </div>
   </section>
@@ -142,7 +142,7 @@ const styles = {
   },
   logoContainer: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'center',a
   },
   logo: {
     width: '80px',
@@ -171,13 +171,17 @@ const styles = {
     flexDirection: 'row-reverse',
   },
   photoContainerRight: {
-    width: '120px',
-    height: 'auto',
     flex: 1,
     textAlign: 'center',
   },
   photo: {
     width: '120px',
+    height: 'auto',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  },
+  largePhoto: {
+    width: '200px',
     height: 'auto',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
