@@ -153,7 +153,7 @@ const styles = {
     alignItems: 'center',
   },
   logo: {
-    width: '120px',
+    width: '80px',
     height: 'auto',
   },
   nav: {
@@ -182,6 +182,12 @@ const styles = {
     flex: 1,
     textAlign: 'center',
   },
+  photo: {
+    width: '120px',
+    height: 'auto',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  },
   textContainer: {
     flex: 2,
   },
@@ -207,8 +213,8 @@ const styles = {
     flexWrap: 'wrap',
   },
   clientImage: {
-    maxWidth: '150px',
-    maxHeight: '100px',
+    maxWidth: '120px',
+    maxHeight: '80px',
     objectFit: 'contain',
   },
   contactLink: {
