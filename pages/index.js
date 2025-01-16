@@ -25,7 +25,9 @@ export default function Home() {
 // Componente Cabeçalho
 const Header = () => (
   <header style={styles.header}>
-    <div style={styles.logo}>Teruya Consultoria</div>
+    <div style={styles.logoContainer}>
+      <img src="/logo-teruya.png" alt="Teruya Consultoria Logo" style={styles.logo} />
+    </div>
     <nav style={styles.nav}>
       <a href="#quem-somos" style={styles.link}>Quem Somos</a>
       <a href="#servicos" style={styles.link}>Serviços</a>
@@ -39,22 +41,21 @@ const Header = () => (
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
     <div style={styles.container}>
+      {/* Foto */}
+      <div style={styles.photoContainer}>
+        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.photo} />
+      </div>
+
       {/* Texto */}
       <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
         <p style={styles.text}>
           Na <strong>Teruya Consultoria</strong>, nosso propósito é transformar dados em insights estratégicos que impulsionam o sucesso dos nossos clientes. 
-          Com mais de 6 anos de experiência, ajudamos empresas a simplificar a tomada de decisões com soluções personalizadas e inovadoras.
+          Com mais de 6 anos de experiência, oferecemos soluções em Business Intelligence, automação e integração de dados.
         </p>
         <p style={styles.text}>
-          O que nos diferencia é a capacidade de integrar e automatizar fluxos de dados complexos, conectando sistemas, planilhas e APIs em um único ambiente eficiente. 
-          Oferecemos agilidade, confiabilidade e suporte dedicado para atender às necessidades específicas de cada negócio.
+          Nosso diferencial está na personalização e eficiência, conectando informações de sistemas, APIs e planilhas para criar fluxos de dados simples e inteligentes.
         </p>
-      </div>
-
-      {/* Imagem */}
-      <div style={styles.imageContainer}>
-        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
       </div>
     </div>
   </section>
@@ -143,7 +144,10 @@ const styles = {
     backgroundColor: '#003366',
     color: 'white',
     padding: '10px 20px',
-    flexWrap: 'wrap', // Torna o cabeçalho responsivo
+  },
+  logoContainer: {
+    display: 'flex',
+    alignItems: 'center',
   },
   logo: {
     fontSize: '1.8em',
@@ -169,6 +173,16 @@ const styles = {
     justifyContent: 'space-between',
     flexWrap: 'wrap', // Torna a seção responsiva
     gap: '20px',
+  },
+  photoContainer: {
+    flex: 1,
+    textAlign: 'center',
+  },
+  photo: {
+    width: '150px', // Tamanho ideal para foto
+    height: 'auto',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   textContainer: {
     flex: 2,
