@@ -128,6 +128,7 @@ const styles = {
     backgroundColor: '#003366',
     color: 'white',
     padding: '10px 20px',
+    flexWrap: 'wrap', // Torna o cabeçalho responsivo
   },
   logo: {
     fontSize: '1.8em',
@@ -136,6 +137,7 @@ const styles = {
   nav: {
     display: 'flex',
     gap: '15px',
+    flexWrap: 'wrap',
   },
   link: {
     color: 'white',
@@ -150,11 +152,11 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap', // Torna a seção responsiva
+    gap: '20px',
   },
   textContainer: {
     flex: 2,
-    paddingRight: '20px',
   },
   imageContainer: {
     flex: 1,
@@ -184,7 +186,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     gap: '30px',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap', // Torna a seção responsiva
   },
   clientImage: {
     maxWidth: '150px',
