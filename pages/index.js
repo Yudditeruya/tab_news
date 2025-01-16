@@ -43,19 +43,12 @@ const WhoWeAre = () => (
       <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
         <p style={styles.text}>
-          A <strong>Teruya Consultoria</strong> é uma empresa especializada em soluções de dados, com o objetivo de transformar informações em insights estratégicos. 
-          Atuamos há mais de 6 anos ajudando empresas a integrar, automatizar e organizar seus dados para alcançar resultados excepcionais.
+          Na <strong>Teruya Consultoria</strong>, nosso propósito é transformar dados em insights estratégicos que impulsionam o sucesso dos nossos clientes. 
+          Com mais de 6 anos de experiência, ajudamos empresas a simplificar a tomada de decisões com soluções personalizadas e inovadoras.
         </p>
         <p style={styles.text}>
-          Oferecemos serviços de <strong>web scraping</strong>, extraindo informações de fontes online de forma eficiente, além de realizar integrações avançadas com 
-          <strong>APIs</strong>, <strong>ERPs</strong> e <strong>planilhas</strong>, garantindo um fluxo de dados contínuo e personalizado para cada necessidade.
-        </p>
-        <p style={styles.text}>
-          Utilizamos as melhores ferramentas do mercado, como <strong>Power BI</strong>, <strong>Qlik Sense</strong> e <strong>Pentaho</strong>, 
-          para criar dashboards interativos, relatórios detalhados e automações que otimizam processos e impulsionam a tomada de decisões.
-        </p>
-        <p style={styles.text}>
-          Seja para coletar dados, integrar sistemas ou automatizar processos, estamos aqui para ser o seu parceiro estratégico na era da informação.
+          O que nos diferencia é a capacidade de integrar e automatizar fluxos de dados complexos, conectando sistemas, planilhas e APIs em um único ambiente eficiente. 
+          Oferecemos agilidade, confiabilidade e suporte dedicado para atender às necessidades específicas de cada negócio.
         </p>
       </div>
 
@@ -73,11 +66,11 @@ const Services = () => (
   <section id="servicos" style={styles.section}>
     <h1 style={styles.title}>Nossos Serviços</h1>
     <ul style={styles.serviceList}>
-      <li>Business Intelligence (BI): Estratégias inteligentes baseadas em dados.</li>
-      <li>ETL: Integração de dados eficiente e segura.</li>
-      <li>Relatórios Personalizados: Informações detalhadas e úteis.</li>
-      <li>Dashboards: Ferramentas como Power BI, Qlik Sense e Pentaho.</li>
-      <li>Automação: Otimização de processos para seu negócio.</li>
+      <li>Business Intelligence (BI)</li>
+      <li>ETL e integração de dados</li>
+      <li>Relatórios e dashboards personalizados</li>
+      <li>Automação de processos</li>
+      <li>Web scraping e integração com APIs</li>
     </ul>
   </section>
 );
