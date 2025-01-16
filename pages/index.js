@@ -66,15 +66,25 @@ const Services = () => (
   <section id="servicos" style={styles.section}>
     <h1 style={styles.title}>Nossos Serviços</h1>
     <ul style={styles.serviceList}>
-      <li>Business Intelligence (BI)</li>
-      <li>Integração de dados de diferentes origens</li>
-      <li>Modelagem Relacional(Star schema e SnowFlake)</li>
-      <li>Relatórios e dashboards personalizados</li>
-      <li>Automação de processos</li>
-      <li>Web scraping e integração com APIs</li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> Business Intelligence (BI)
+      </li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> ETL e integração de dados
+      </li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> Relatórios e dashboards personalizados
+      </li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> Automação de processos
+      </li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> Web scraping e integração com APIs
+      </li>
     </ul>
   </section>
 );
+
 
 // Componente Clientes
 const Clients = () => (
@@ -209,5 +219,10 @@ const styles = {
   footerText: {
     margin: 0,
     fontSize: '0.9em',
+  },
+  checkIcon: {
+    color: '#2ecc71', // Verde para o check
+    fontSize: '1.5em',
+    marginRight: '10px',
   },
 };
