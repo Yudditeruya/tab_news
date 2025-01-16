@@ -10,8 +10,8 @@ export default function Home() {
       {/* Seção Serviços */}
       <Services />
 
-      {/* Seção Clientes */}
-      <Clients />
+      {/* Seção Projetos */}
+      <Projects />
 
       {/* Seção Contato */}
       <Contact />
@@ -29,7 +29,7 @@ const Header = () => (
     <nav style={styles.nav}>
       <a href="#quem-somos" style={styles.link}>Quem Somos</a>
       <a href="#servicos" style={styles.link}>Serviços</a>
-      <a href="#clientes" style={styles.link}>Clientes</a>
+      <a href="#projetos" style={styles.link}>Projetos</a>
       <a href="#contato" style={styles.link}>Contato</a>
     </nav>
   </header>
@@ -38,19 +38,16 @@ const Header = () => (
 // Componente Quem Somos
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
-    <div style={styles.whoWeAreRow}>
-      {/* Card da Foto */}
-      <div style={styles.card}>
-        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
-      </div>
-
-      {/* Card do Texto */}
-      <div style={styles.card}>
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
         <p style={styles.text}>
           A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
-          Nosso objetivo é transformar dados em resultados para o seu negócio.
+          Transformamos dados em resultados para empresas de todos os setores.
         </p>
+      </div>
+      <div style={styles.imageContainer}>
+        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
       </div>
     </div>
   </section>
@@ -58,15 +55,15 @@ const WhoWeAre = () => (
 
 // Componente Serviços
 const Services = () => (
-  <section id="servicos" style={styles.section}>
+  <section id="servicos" style={styles.sectionAlt}>
     <h1 style={styles.title}>Nossos Serviços</h1>
     <div style={styles.services}>
       {[
         { title: 'Business Intelligence (BI)', desc: 'Estratégias inteligentes baseadas em dados.' },
         { title: 'ETL', desc: 'Integração de dados eficiente e segura.' },
         { title: 'Relatórios Personalizados', desc: 'Informações detalhadas e úteis.' },
-        { title: 'Dashboards para todas áreas', desc: 'Ferramentas: PowerBI, Qlik Sense, Pentaho Designer, Report Builder' },
-        { title: 'Automação', desc: 'Otimização de processos para seu negócio.' },
+        { title: 'Dashboards', desc: 'Visualizações claras com Power BI, Qlik Sense, e mais.' },
+        { title: 'Automação', desc: 'Otimização de processos para sua empresa.' },
       ].map((service, index) => (
         <div key={index} style={styles.serviceCard}>
           <h2 style={styles.cardTitle}>{service.title}</h2>
@@ -77,19 +74,19 @@ const Services = () => (
   </section>
 );
 
-// Componente Clientes
-const Clients = () => (
-  <section id="clientes" style={styles.section}>
-    <h1 style={styles.title}>Nossos Clientes</h1>
-    <p style={styles.text}>Clientes satisfeitos são nosso maior patrimônio.</p>
-    <div style={styles.clients}>
+// Componente Projetos
+const Projects = () => (
+  <section id="projetos" style={styles.section}>
+    <h1 style={styles.title}>Projetos Realizados</h1>
+    <div style={styles.projects}>
       {[
-        { src: '/enzo.png', alt: 'Grupo Enzo' },
-        { src: '/sebrae.png', alt: 'SEBRAE' },
-        { src: '/prefeituracg.jpeg', alt: 'Prefeitura de CG' },
-      ].map((client, index) => (
-        <div key={index} style={styles.clientLogo}>
-          <img src={client.src} alt={client.alt} style={styles.image} />
+        { title: 'Projeto 1', desc: 'Implementação de BI para multinacional.' },
+        { title: 'Projeto 2', desc: 'Automação de processos para varejistas.' },
+        { title: 'Projeto 3', desc: 'ETL para banco de dados robusto.' },
+      ].map((project, index) => (
+        <div key={index} style={styles.projectCard}>
+          <h2 style={styles.cardTitle}>{project.title}</h2>
+          <p style={styles.cardText}>{project.desc}</p>
         </div>
       ))}
     </div>
@@ -98,9 +95,9 @@ const Clients = () => (
 
 // Componente Contato
 const Contact = () => (
-  <section id="contato" style={styles.section}>
+  <section id="contato" style={styles.sectionAlt}>
     <h1 style={styles.title}>Contato</h1>
-    <p style={styles.text}>Entre em contato conosco para saber mais sobre nossas soluções.</p>
+    <p style={styles.text}>Entre em contato para saber mais sobre nossos serviços.</p>
     <p style={styles.text}>
       WhatsApp: <a href="https://wa.me/5567999614879" style={styles.contactLink}>+55 (67) 99961-4879</a>
     </p>
@@ -121,117 +118,110 @@ const Footer = () => (
 // Estilos
 const styles = {
   body: {
-    backgroundColor: '#f7fbff',
+    fontFamily: 'Arial, sans-serif',
+    backgroundColor: '#f7f7f7',
     color: '#333',
     margin: 0,
-    fontFamily: 'Arial, sans-serif',
   },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    padding: '20px 40px',
     backgroundColor: '#003366',
-    color: 'white',
-    padding: '10px 20px',
+    color: '#fff',
+    position: 'fixed',
+    top: 0,
+    width: '100%',
+    zIndex: 1000,
   },
   logo: {
-    fontSize: '1.8em',
+    fontSize: '1.5em',
     fontWeight: 'bold',
   },
   nav: {
     display: 'flex',
-    gap: '15px',
-    flexWrap: 'wrap',
-  },
-  link: {
-    color: 'white',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    transition: 'color 0.3s',
-    fontSize: '1em',
-  },
-  section: {
-    padding: '30px 10px',
-    marginBottom: '20px',
-    backgroundColor: '#e0e0e0',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  },
-  whoWeAreRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexWrap: 'wrap',
     gap: '20px',
   },
-  card: {
-    flex: '1',
-    backgroundColor: '#ffffff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  link: {
+    color: '#fff',
+    textDecoration: 'none',
+    fontSize: '1em',
+    transition: 'color 0.3s',
+  },
+  section: {
+    padding: '100px 20px 50px',
+    backgroundColor: '#fff',
+  },
+  sectionAlt: {
+    padding: '100px 20px 50px',
+    backgroundColor: '#f0f0f0',
+  },
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+  },
+  textContainer: {
+    flex: 1,
+    paddingRight: '20px',
+  },
+  imageContainer: {
+    flex: 1,
     textAlign: 'center',
-    minWidth: '300px',
   },
   profileImage: {
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-  },
-  title: {
-    fontSize: '2em',
-    marginBottom: '10px',
-    textAlign: 'center',
-  },
-  text: {
-    fontSize: '1em',
-    color: '#555',
   },
   services: {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
     gap: '20px',
-    marginTop: '20px',
   },
   serviceCard: {
-    background: '#ffffff',
     padding: '20px',
+    backgroundColor: '#fff',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'center',
   },
-  clients: {
+  projects: {
     display: 'flex',
-    justifyContent: 'center',
-    gap: '20px',
     flexWrap: 'wrap',
-    marginTop: '20px',
-  },
-  clientLogo: {
-    background: '#eaeaea',
-    borderRadius: '8px',
-    width: '200px',
-    height: '150px',
-    display: 'flex',
-    alignItems: 'center',
+    gap: '20px',
     justifyContent: 'center',
-    overflow: 'hidden',
   },
-  image: {
-    maxWidth: '100%',
-    maxHeight: '100%',
-    objectFit: 'contain',
+  projectCard: {
+    padding: '20px',
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'center',
+    flex: '1',
+    maxWidth: '300px',
+  },
+  title: {
+    fontSize: '2em',
+    marginBottom: '20px',
+    textAlign: 'center',
+  },
+  text: {
+    fontSize: '1em',
+    color: '#555',
+    textAlign: 'center',
   },
   contactLink: {
     color: '#003366',
     textDecoration: 'none',
     fontWeight: 'bold',
-    fontSize: '1em',
   },
   footer: {
-    backgroundColor: '#003366',
-    color: 'white',
     textAlign: 'center',
-    padding: '20px 0',
+    padding: '20px',
+    backgroundColor: '#003366',
+    color: '#fff',
   },
 };
