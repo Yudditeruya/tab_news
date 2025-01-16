@@ -67,7 +67,8 @@ const Services = () => (
     <h1 style={styles.title}>Nossos Serviços</h1>
     <ul style={styles.serviceList}>
       <li>Business Intelligence (BI)</li>
-      <li>ETL e integração de dados</li>
+      <li>Integração de dados de diferentes origens</li>
+      <li>Modelagem Relacional(Star schema e SnowFlake)</li>
       <li>Relatórios e dashboards personalizados</li>
       <li>Automação de processos</li>
       <li>Web scraping e integração com APIs</li>
