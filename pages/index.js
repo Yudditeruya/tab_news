@@ -40,12 +40,7 @@ const Header = () => (
 // Componente Quem Somos
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
-    <div style={styles.container}>
-      {/* Foto */}
-      <div style={styles.photoContainer}>
-        <img src="/logo-teruya.jpg" alt="Minha Foto" style={styles.photo} />
-      </div>
-
+    <div style={styles.containerReverse}>
       {/* Texto */}
       <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
@@ -53,14 +48,23 @@ const WhoWeAre = () => (
           Na <strong>Teruya Consultoria</strong>, nosso propósito é transformar dados em insights estratégicos que impulsionam o sucesso dos nossos clientes. 
           Com mais de 6 anos de experiência, oferecemos soluções em Business Intelligence, automação e integração de dados.
         </p>
-        <p style={styles.text}>
-          Nosso diferencial está na personalização e eficiência, conectando informações de sistemas, APIs e planilhas para criar fluxos de dados simples e inteligentes.
-        </p>
+        <p style={styles.text}>Nossos serviços incluem:</p>
+        <ul style={styles.serviceList}>
+          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Business Intelligence (BI)</li>
+          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Integração de dados com fontes diferentes</li>
+          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Modelagem de dados (Star Schema e SnowFlake)</li>
+          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Data WareHouse e Data Mart</li>
+          <li style={styles.serviceItem}><span style={styles.checkIcon}>✔</span> Relatórios e dashboards personalizados</li>
+        </ul>
+      </div>
+
+      {/* Foto */}
+      <div style={styles.photoContainerRight}>
+        <img src="/logo-teruya.jpg" alt="Logo Teruya Consultoria" style={styles.photo} />
       </div>
     </div>
   </section>
 );
-
 
 // Componente Serviços
 const Services = () => (
@@ -88,7 +92,6 @@ const Services = () => (
     </ul>
   </section>
 );
-
 
 // Componente Clientes
 const Clients = () => (
@@ -150,8 +153,8 @@ const styles = {
     alignItems: 'center',
   },
   logo: {
-    fontSize: '1.8em',
-    fontWeight: 'bold',
+    width: '120px',
+    height: 'auto',
   },
   nav: {
     display: 'flex',
@@ -167,34 +170,20 @@ const styles = {
   section: {
     padding: '50px 20px',
   },
-  container: {
+  containerReverse: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    flexWrap: 'wrap', // Torna a seção responsiva
+    flexWrap: 'wrap',
     gap: '20px',
+    flexDirection: 'row-reverse',
   },
-  photoContainer: {
+  photoContainerRight: {
     flex: 1,
     textAlign: 'center',
-  },
-  photo: {
-    width: '150px', // Tamanho ideal para foto
-    height: 'auto',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   textContainer: {
     flex: 2,
-  },
-  imageContainer: {
-    flex: 1,
-    textAlign: 'center',
-  },
-  profileImage: {
-    maxWidth: '100%',
-    height: 'auto',
-    borderRadius: '8px',
   },
   title: {
     fontSize: '2.5em',
@@ -215,7 +204,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     gap: '30px',
-    flexWrap: 'wrap', // Torna a seção responsiva
+    flexWrap: 'wrap',
   },
   clientImage: {
     maxWidth: '150px',
@@ -238,7 +227,7 @@ const styles = {
     fontSize: '0.9em',
   },
   checkIcon: {
-    color: '#2ecc71', // Verde para o check
+    color: '#2ecc71',
     fontSize: '1.5em',
     marginRight: '10px',
   },
