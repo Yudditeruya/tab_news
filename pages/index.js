@@ -1,83 +1,6 @@
-export default function Home() {
-  return (
-    <div>
-      {/* Cabeçalho */}
-      <header style={styles.header}>
-        <div style={styles.logo}>Teruya Consultoria</div>
-        <nav style={styles.nav}>
-          <a href="#quem-somos" style={styles.link}>Quem Somos</a>
-          <a href="#servicos" style={styles.link}>Serviços</a>
-          <a href="#clientes" style={styles.link}>Clientes</a>
-          <a href="#contato" style={styles.link}>Contato</a>
-        </nav>
-      </header>
+import React from 'react';
 
-      {/* Seção Quem Somos */}
-      <section id="quem-somos" style={styles.section}>
-        <h1>Quem Somos</h1>
-        <p>
-          A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
-          Nosso objetivo é transformar dados em resultados para o seu negócio.
-        </p>
-      </section>
-
-      {/* Seção Serviços */}
-      <section id="servicos" style={styles.section}>
-        <h1>Nossos Serviços</h1>
-        <div style={styles.services}>
-          <div style={styles.serviceCard}>
-            <h2>Business Intelligence (BI)</h2>
-            <p>Estratégias inteligentes baseadas em dados.</p>
-          </div>
-          <div style={styles.serviceCard}>
-            <h2>ETL</h2>
-            <p>Integração de dados eficiente e segura.</p>
-          </div>
-          <div style={styles.serviceCard}>
-            <h2>Relatórios Personalizados</h2>
-            <p>Informações detalhadas e úteis.</p>
-          </div>
-          <div style={styles.serviceCard}>
-            <h2>Automação</h2>
-            <p>Otimização de processos para seu negócio.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção Clientes */}
-      <section id="clientes" style={styles.section}>
-        <h1>Nossos Clientes</h1>
-        <p>Clientes satisfeitos são nosso maior patrimônio.</p>
-        <div style={styles.clients}>
-          <div style={styles.clientLogo}>
-            <img src="/enzo.png" alt="Grupo Enzo" style={styles.image} />
-          </div>
-          <div style={styles.clientLogo}>
-            <img src="/sebrae.png" alt="SEBRAE" style={styles.image} />
-          </div>
-          <div style={styles.clientLogo}>
-            <img src="/prefeituracg.jpeg" alt="Prefeitura de CG" style={styles.image} />
-          </div>
-        </div>
-      </section>
-
-      {/* Seção Contato */}
-      <section id="contato" style={styles.section}>
-        <h1>Contato</h1>
-        <p>Entre em contato conosco para saber mais sobre nossas soluções.</p>
-        <p>WhatsApp: <a href="https://wa.me/5567999614879">+55 (67) 99961-4879</a></p>
-        <p>Email: <a href="mailto:contato@teruyaconsultoria.com">contato@teruyaconsultoria.com</a></p>
-      </section>
-
-      {/* Rodapé */}
-      <footer style={styles.footer}>
-        <p>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
-        <p>Desenvolvido por Teruya Consultoria</p>
-      </footer>
-    </div>
-  );
-}
-
+// Estilos globais
 const styles = {
   header: {
     display: 'flex',
@@ -146,3 +69,93 @@ const styles = {
     padding: '20px 0',
   },
 };
+
+// Componente Cabeçalho
+const Header = () => (
+  <header style={styles.header}>
+    <div style={styles.logo}>Teruya Consultoria</div>
+    <nav style={styles.nav}>
+      <a href="#quem-somos" style={styles.link}>Quem Somos</a>
+      <a href="#servicos" style={styles.link}>Serviços</a>
+      <a href="#clientes" style={styles.link}>Clientes</a>
+      <a href="#contato" style={styles.link}>Contato</a>
+    </nav>
+  </header>
+);
+
+// Componente Seção de Serviços
+const Services = () => (
+  <section id="servicos" style={styles.section}>
+    <h1>Nossos Serviços</h1>
+    <div style={styles.services}>
+      {[
+        { title: 'Business Intelligence (BI)', desc: 'Estratégias inteligentes baseadas em dados.' },
+        { title: 'ETL', desc: 'Integração de dados eficiente e segura.' },
+        { title: 'Relatórios Personalizados', desc: 'Informações detalhadas e úteis.' },
+        { title: 'Automação', desc: 'Otimização de processos para seu negócio.' },
+      ].map((service, index) => (
+        <div key={index} style={styles.serviceCard}>
+          <h2>{service.title}</h2>
+          <p>{service.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+// Componente Seção de Clientes
+const Clients = () => (
+  <section id="clientes" style={styles.section}>
+    <h1>Nossos Clientes</h1>
+    <p>Clientes satisfeitos são nosso maior patrimônio.</p>
+    <div style={styles.clients}>
+      {[
+        { src: '/enzo.png', alt: 'Grupo Enzo' },
+        { src: '/sebrae.png', alt: 'SEBRAE' },
+        { src: '/prefeituracg.jpeg', alt: 'Prefeitura de CG' },
+      ].map((client, index) => (
+        <div key={index} style={styles.clientLogo}>
+          <img src={client.src} alt={client.alt} style={styles.image} />
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+// Componente Seção de Contato
+const Contact = () => (
+  <section id="contato" style={styles.section}>
+    <h1>Contato</h1>
+    <p>Entre em contato conosco para saber mais sobre nossas soluções.</p>
+    <p>WhatsApp: <a href="https://wa.me/5567999614879">+55 (67) 99961-4879</a></p>
+    <p>Email: <a href="mailto:contato@teruyaconsultoria.com">contato@teruyaconsultoria.com</a></p>
+  </section>
+);
+
+// Componente Rodapé
+const Footer = () => (
+  <footer style={styles.footer}>
+    <p>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Teruya Consultoria</p>
+  </footer>
+);
+
+// Componente Principal (Home)
+export default function Home() {
+  return (
+    <div>
+      <Header />
+      <section id="quem-somos" style={styles.section}>
+        <h1>Quem Somos</h1>
+        <p>
+          A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
+          Nosso objetivo é transformar dados em resultados para o seu negócio.
+        </p>
+      </section>
+      <Services />
+      <Clients />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
