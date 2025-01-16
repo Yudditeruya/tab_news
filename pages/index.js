@@ -38,9 +38,9 @@ const Header = () => (
 // Componente Quem Somos
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
-    <div style={styles.whoWeAreRow}>
-      {/* Card do Texto */}
-      <div style={styles.textCard}>
+    <div style={styles.container}>
+      {/* Texto */}
+      <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
         <p style={styles.text}>
           A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
@@ -52,8 +52,8 @@ const WhoWeAre = () => (
         </p>
       </div>
 
-      {/* Card da Foto */}
-      <div style={styles.imageCard}>
+      {/* Imagem */}
+      <div style={styles.imageContainer}>
         <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
       </div>
     </div>
@@ -64,20 +64,13 @@ const WhoWeAre = () => (
 const Services = () => (
   <section id="servicos" style={styles.section}>
     <h1 style={styles.title}>Nossos Serviços</h1>
-    <div style={styles.services}>
-      {[
-        { title: 'Business Intelligence (BI)', desc: 'Estratégias inteligentes baseadas em dados.' },
-        { title: 'ETL', desc: 'Integração de dados eficiente e segura.' },
-        { title: 'Relatórios Personalizados', desc: 'Informações detalhadas e úteis.' },
-        { title: 'Dashboards para todas áreas', desc: 'Ferramentas: PowerBI, Qlik Sense, Pentaho Designer, Report Builder' },
-        { title: 'Automação', desc: 'Otimização de processos para seu negócio.' },
-      ].map((service, index) => (
-        <div key={index} style={styles.serviceCard}>
-          <h2 style={styles.cardTitle}>{service.title}</h2>
-          <p style={styles.cardText}>{service.desc}</p>
-        </div>
-      ))}
-    </div>
+    <ul style={styles.serviceList}>
+      <li>Business Intelligence (BI): Estratégias inteligentes baseadas em dados.</li>
+      <li>ETL: Integração de dados eficiente e segura.</li>
+      <li>Relatórios Personalizados: Informações detalhadas e úteis.</li>
+      <li>Dashboards: Ferramentas como Power BI, Qlik Sense e Pentaho.</li>
+      <li>Automação: Otimização de processos para seu negócio.</li>
+    </ul>
   </section>
 );
 
@@ -92,9 +85,7 @@ const Clients = () => (
         { src: '/sebrae.png', alt: 'SEBRAE' },
         { src: '/prefeituracg.jpeg', alt: 'Prefeitura de CG' },
       ].map((client, index) => (
-        <div key={index} style={styles.clientLogo}>
-          <img src={client.src} alt={client.alt} style={styles.image} />
-        </div>
+        <img key={index} src={client.src} alt={client.alt} style={styles.clientImage} />
       ))}
     </div>
   </section>
@@ -125,7 +116,7 @@ const Footer = () => (
 // Estilos
 const styles = {
   body: {
-    backgroundColor: '#f7fbff',
+    backgroundColor: '#ffffff',
     color: '#333',
     margin: 0,
     fontFamily: 'Arial, sans-serif',
@@ -150,37 +141,23 @@ const styles = {
     color: 'white',
     textDecoration: 'none',
     fontWeight: 'bold',
-    transition: 'color 0.3s',
     fontSize: '1em',
   },
   section: {
-    padding: '30px 10px',
-    marginBottom: '20px',
-    backgroundColor: '#e0e0e0',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    padding: '50px 20px',
   },
-  whoWeAreRow: {
+  container: {
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
     flexWrap: 'wrap',
-    gap: '20px',
   },
-  textCard: {
-    flex: '2',
-    backgroundColor: '#ffffff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    textAlign: 'left',
+  textContainer: {
+    flex: 2,
+    paddingRight: '20px',
   },
-  imageCard: {
-    flex: '1',
-    backgroundColor: '#ffffff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  imageContainer: {
+    flex: 1,
     textAlign: 'center',
   },
   profileImage: {
@@ -189,14 +166,35 @@ const styles = {
     borderRadius: '8px',
   },
   title: {
-    fontSize: '2em',
-    marginBottom: '10px',
+    fontSize: '2.5em',
+    marginBottom: '20px',
     textAlign: 'left',
   },
   text: {
-    fontSize: '1em',
-    color: '#555',
-    marginBottom: '10px',
+    fontSize: '1.2em',
+    marginBottom: '20px',
+  },
+  serviceList: {
+    listStyle: 'none',
+    padding: 0,
+    fontSize: '1.2em',
+    lineHeight: '1.8',
+  },
+  clients: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '30px',
+    flexWrap: 'wrap',
+  },
+  clientImage: {
+    maxWidth: '150px',
+    maxHeight: '100px',
+    objectFit: 'contain',
+  },
+  contactLink: {
+    color: '#003366',
+    textDecoration: 'none',
+    fontWeight: 'bold',
   },
   footer: {
     backgroundColor: '#003366',
