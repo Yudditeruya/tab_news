@@ -70,13 +70,16 @@ const Services = () => (
         <span style={styles.checkIcon}>✔</span> Business Intelligence (BI)
       </li>
       <li style={styles.serviceItem}>
-        <span style={styles.checkIcon}>✔</span> ETL e integração de dados
+        <span style={styles.checkIcon}>✔</span> Integração de dados com fontes diferentes
+      </li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> Modelagem de dados (Star Schema e SnowFlake)
+      </li>
+      <li style={styles.serviceItem}>
+        <span style={styles.checkIcon}>✔</span> Data WareHouse e Data Mart
       </li>
       <li style={styles.serviceItem}>
         <span style={styles.checkIcon}>✔</span> Relatórios e dashboards personalizados
-      </li>
-      <li style={styles.serviceItem}>
-        <span style={styles.checkIcon}>✔</span> Automação de processos
       </li>
       <li style={styles.serviceItem}>
         <span style={styles.checkIcon}>✔</span> Web scraping e integração com APIs
