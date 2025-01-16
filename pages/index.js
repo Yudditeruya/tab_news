@@ -6,8 +6,8 @@ export default function Home() {
 
       {/* Seção Quem Somos */}
       <section id="quem-somos" style={styles.section}>
-        <h1>Quem Somos</h1>
-        <p>
+        <h1 style={styles.title}>Quem Somos</h1>
+        <p style={styles.text}>
           A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
           Nosso objetivo é transformar dados em resultados para o seu negócio.
         </p>
@@ -44,7 +44,7 @@ const Header = () => (
 // Componente Seção de Serviços
 const Services = () => (
   <section id="servicos" style={styles.section}>
-    <h1>Nossos Serviços</h1>
+    <h1 style={styles.title}>Nossos Serviços</h1>
     <div style={styles.services}>
       {[
         { title: 'Business Intelligence (BI)', desc: 'Estratégias inteligentes baseadas em dados.' },
@@ -53,8 +53,8 @@ const Services = () => (
         { title: 'Automação', desc: 'Otimização de processos para seu negócio.' },
       ].map((service, index) => (
         <div key={index} style={styles.serviceCard}>
-          <h2>{service.title}</h2>
-          <p>{service.desc}</p>
+          <h2 style={styles.cardTitle}>{service.title}</h2>
+          <p style={styles.cardText}>{service.desc}</p>
         </div>
       ))}
     </div>
@@ -64,8 +64,8 @@ const Services = () => (
 // Componente Seção de Clientes
 const Clients = () => (
   <section id="clientes" style={styles.section}>
-    <h1>Nossos Clientes</h1>
-    <p>Clientes satisfeitos são nosso maior patrimônio.</p>
+    <h1 style={styles.title}>Nossos Clientes</h1>
+    <p style={styles.text}>Clientes satisfeitos são nosso maior patrimônio.</p>
     <div style={styles.clients}>
       {[
         { src: '/enzo.png', alt: 'Grupo Enzo' },
@@ -83,26 +83,30 @@ const Clients = () => (
 // Componente Seção de Contato
 const Contact = () => (
   <section id="contato" style={styles.section}>
-    <h1>Contato</h1>
-    <p>Entre em contato conosco para saber mais sobre nossas soluções.</p>
-    <p>WhatsApp: <a href="https://wa.me/5567999614879">+55 (67) 99961-4879</a></p>
-    <p>Email: <a href="mailto:contato@teruyaconsultoria.com">contato@teruyaconsultoria.com</a></p>
+    <h1 style={styles.title}>Contato</h1>
+    <p style={styles.text}>Entre em contato conosco para saber mais sobre nossas soluções.</p>
+    <p style={styles.text}>
+      WhatsApp: <a href="https://wa.me/5567999614879" style={styles.link}>+55 (67) 99961-4879</a>
+    </p>
+    <p style={styles.text}>
+      Email: <a href="dsa.teruya@gmail.com" style={styles.link}>dsa.teruya@gmail.com</a>
+    </p>
   </section>
 );
 
 // Componente Rodapé
 const Footer = () => (
   <footer style={styles.footer}>
-    <p>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
-    <p>Desenvolvido por Teruya Consultoria</p>
+    <p style={styles.text}>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
+    <p style={styles.text}>Desenvolvido por Teruya Consultoria</p>
   </footer>
 );
 
 // Estilos
 const styles = {
   body: {
-    backgroundColor: '#e8f4ff', // Azul claro para o fundo do site
-    color: '#333', // Cor do texto principal
+    backgroundColor: '#f7fbff', // Azul muito claro para o fundo geral
+    color: '#333', // Cor padrão do texto
     margin: 0,
     fontFamily: 'Arial, sans-serif',
   },
@@ -115,7 +119,7 @@ const styles = {
     padding: '10px 20px',
   },
   logo: {
-    fontSize: '1.5em',
+    fontSize: '1.8em',
     fontWeight: 'bold',
   },
   nav: {
@@ -126,13 +130,14 @@ const styles = {
     color: 'white',
     textDecoration: 'none',
     fontWeight: 'bold',
+    transition: 'color 0.3s',
   },
   section: {
     padding: '50px 20px',
     textAlign: 'center',
-    backgroundColor: '#ffffff', // Fundo branco para as seções
     marginBottom: '20px',
     borderRadius: '8px',
+    backgroundColor: 'white',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   services: {
@@ -146,6 +151,10 @@ const styles = {
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    transition: 'transform 0.3s ease',
+  },
+  serviceCardHover: {
+    transform: 'scale(1.05)',
   },
   clients: {
     display: 'flex',
@@ -164,14 +173,22 @@ const styles = {
     overflow: 'hidden',
   },
   image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    objectFit: 'contain',
   },
   footer: {
     backgroundColor: '#003366',
     color: 'white',
     textAlign: 'center',
     padding: '20px 0',
+  },
+  title: {
+    fontSize: '2em',
+    marginBottom: '10px',
+  },
+  text: {
+    fontSize: '1em',
+    color: '#555',
   },
 };
