@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div>
+    <div style={styles.body}>
       {/* Cabeçalho */}
       <Header />
 
@@ -100,6 +100,12 @@ const Footer = () => (
 
 // Estilos
 const styles = {
+  body: {
+    backgroundColor: '#e8f4ff', // Azul claro para o fundo do site
+    color: '#333', // Cor do texto principal
+    margin: 0,
+    fontFamily: 'Arial, sans-serif',
+  },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -124,7 +130,10 @@ const styles = {
   section: {
     padding: '50px 20px',
     textAlign: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#ffffff', // Fundo branco para as seções
+    marginBottom: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   services: {
     display: 'grid',
@@ -133,7 +142,7 @@ const styles = {
     marginTop: '20px',
   },
   serviceCard: {
-    background: 'white',
+    background: '#f9f9f9',
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -147,17 +156,17 @@ const styles = {
   clientLogo: {
     background: '#eaeaea',
     borderRadius: '8px',
-    width: '200px', // Largura fixa do card
-    height: '150px', // Altura fixa do card
+    width: '200px',
+    height: '150px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden', // Garante que a imagem não ultrapasse o card
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
     height: '100%',
-    objectFit: 'cover', // Faz a imagem preencher o card proporcionalmente
+    objectFit: 'cover',
   },
   footer: {
     backgroundColor: '#003366',
