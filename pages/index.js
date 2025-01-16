@@ -1,74 +1,32 @@
-import React from 'react';
+export default function Home() {
+  return (
+    <div>
+      {/* Cabeçalho */}
+      <Header />
 
-// Estilos globais
-const styles = {
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#003366',
-    color: 'white',
-    padding: '10px 20px',
-  },
-  logo: {
-    fontSize: '1.5em',
-    fontWeight: 'bold',
-  },
-  nav: {
-    display: 'flex',
-    gap: '15px',
-  },
-  link: {
-    color: 'white',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-  },
-  section: {
-    padding: '50px 20px',
-    textAlign: 'center',
-    backgroundColor: '#f5f5f5',
-  },
-  services: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '20px',
-    marginTop: '20px',
-  },
-  serviceCard: {
-    background: 'white',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-  },
-  clients: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '20px',
-    marginTop: '20px',
-  },
-  clientLogo: {
-    background: '#eaeaea',
-    padding: '20px',
-    borderRadius: '8px',
-    width: '150px',
-    height: '100px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  image: {
-    maxWidth: '100%',
-    maxHeight: '100%',
-    objectFit: 'contain',
-  },
-  footer: {
-    backgroundColor: '#003366',
-    color: 'white',
-    textAlign: 'center',
-    padding: '20px 0',
-  },
-};
+      {/* Seção Quem Somos */}
+      <section id="quem-somos" style={styles.section}>
+        <h1>Quem Somos</h1>
+        <p>
+          A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
+          Nosso objetivo é transformar dados em resultados para o seu negócio.
+        </p>
+      </section>
+
+      {/* Seção Serviços */}
+      <Services />
+
+      {/* Seção Clientes */}
+      <Clients />
+
+      {/* Seção Contato */}
+      <Contact />
+
+      {/* Rodapé */}
+      <Footer />
+    </div>
+  );
+}
 
 // Componente Cabeçalho
 const Header = () => (
@@ -140,22 +98,71 @@ const Footer = () => (
   </footer>
 );
 
-// Componente Principal (Home)
-export default function Home() {
-  return (
-    <div>
-      <Header />
-      <section id="quem-somos" style={styles.section}>
-        <h1>Quem Somos</h1>
-        <p>
-          A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
-          Nosso objetivo é transformar dados em resultados para o seu negócio.
-        </p>
-      </section>
-      <Services />
-      <Clients />
-      <Contact />
-      <Footer />
-    </div>
-  );
-}
+// Estilos
+const styles = {
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#003366',
+    color: 'white',
+    padding: '10px 20px',
+  },
+  logo: {
+    fontSize: '1.5em',
+    fontWeight: 'bold',
+  },
+  nav: {
+    display: 'flex',
+    gap: '15px',
+  },
+  link: {
+    color: 'white',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+  },
+  section: {
+    padding: '50px 20px',
+    textAlign: 'center',
+    backgroundColor: '#f5f5f5',
+  },
+  services: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+    gap: '20px',
+    marginTop: '20px',
+  },
+  serviceCard: {
+    background: 'white',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  },
+  clients: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '20px',
+    marginTop: '20px',
+  },
+  clientLogo: {
+    background: '#eaeaea',
+    borderRadius: '8px',
+    width: '200px', // Largura fixa do card
+    height: '150px', // Altura fixa do card
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden', // Garante que a imagem não ultrapasse o card
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover', // Faz a imagem preencher o card proporcionalmente
+  },
+  footer: {
+    backgroundColor: '#003366',
+    color: 'white',
+    textAlign: 'center',
+    padding: '20px 0',
+  },
+};
