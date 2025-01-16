@@ -65,6 +65,7 @@ const Services = () => (
         { title: 'Business Intelligence (BI)', desc: 'Estratégias inteligentes baseadas em dados.' },
         { title: 'ETL', desc: 'Integração de dados eficiente e segura.' },
         { title: 'Relatórios Personalizados', desc: 'Informações detalhadas e úteis.' },
+        { title: 'Dashboards para todas áreas', desc: 'Ferramentas: PowerBI, Qlik sense, Pentaho Designer, Report Builder' },
         { title: 'Automação', desc: 'Otimização de processos para seu negócio.' },
       ].map((service, index) => (
         <div key={index} style={styles.serviceCard}>
@@ -140,17 +141,19 @@ const styles = {
   nav: {
     display: 'flex',
     gap: '15px',
+    flexWrap: 'wrap', // Ajusta para telas menores
   },
   link: {
     color: 'white',
     textDecoration: 'none',
     fontWeight: 'bold',
     transition: 'color 0.3s',
+    fontSize: '1em', // Texto menor para responsividade
   },
   section: {
-    padding: '50px 20px',
+    padding: '30px 10px', // Reduzido para dispositivos móveis
     marginBottom: '20px',
-    backgroundColor: '#e0e0e0', // Fundo cinza claro
+    backgroundColor: '#e0e0e0',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
@@ -158,16 +161,17 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'wrap', // Torna responsivo
+    flexWrap: 'wrap', // Torna responsivo para empilhar elementos
     gap: '20px',
   },
   card: {
     flex: '1',
-    backgroundColor: '#ffffff', // Fundo branco para os cards internos
+    backgroundColor: '#ffffff',
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     textAlign: 'center',
+    minWidth: '300px', // Garante tamanho mínimo em telas pequenas
   },
   profileImage: {
     maxWidth: '100%',
@@ -178,6 +182,7 @@ const styles = {
   title: {
     fontSize: '2em',
     marginBottom: '10px',
+    textAlign: 'center',
   },
   text: {
     fontSize: '1em',
@@ -194,11 +199,13 @@ const styles = {
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'center',
   },
   clients: {
     display: 'flex',
     justifyContent: 'center',
     gap: '20px',
+    flexWrap: 'wrap', // Ajusta layout em telas menores
     marginTop: '20px',
   },
   clientLogo: {
@@ -220,11 +227,44 @@ const styles = {
     color: '#003366',
     textDecoration: 'none',
     fontWeight: 'bold',
+    fontSize: '1em',
   },
   footer: {
     backgroundColor: '#003366',
     color: 'white',
     textAlign: 'center',
     padding: '20px 0',
+  },
+  // Media queries para dispositivos móveis
+  '@media (max-width: 768px)': {
+    header: {
+      flexDirection: 'column',
+      textAlign: 'center',
+    },
+    logo: {
+      fontSize: '1.5em',
+    },
+    nav: {
+      flexDirection: 'column',
+      gap: '10px',
+    },
+    section: {
+      padding: '20px 10px',
+    },
+    whoWeAreRow: {
+      flexDirection: 'column', // Empilha os cards
+    },
+    card: {
+      minWidth: '100%', // Cards ocupam a largura total
+    },
+    title: {
+      fontSize: '1.5em',
+    },
+    text: {
+      fontSize: '0.9em',
+    },
+    contactLink: {
+      fontSize: '0.9em',
+    },
   },
 };
