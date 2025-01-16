@@ -39,18 +39,22 @@ const Header = () => (
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
     <div style={styles.whoWeAreRow}>
-      {/* Card da Foto */}
-      <div style={styles.card}>
-        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
-      </div>
-
       {/* Card do Texto */}
-      <div style={styles.card}>
+      <div style={styles.textCard}>
         <h1 style={styles.title}>Quem Somos</h1>
         <p style={styles.text}>
           A Teruya Consultoria é especializada em soluções de Business Intelligence, ETL, Relatórios e Automação.
           Nosso objetivo é transformar dados em resultados para o seu negócio.
         </p>
+        <p style={styles.text}>
+          Com mais de 6 anos de experiência trabalhando com dados, ajudamos empresas a tomar decisões baseadas em
+          informações confiáveis e visões analíticas, promovendo eficiência e resultados extraordinários.
+        </p>
+      </div>
+
+      {/* Card da Foto */}
+      <div style={styles.imageCard}>
+        <img src="/Yuddi.jpeg" alt="Minha Foto" style={styles.profileImage} />
       </div>
     </div>
   </section>
@@ -105,7 +109,7 @@ const Contact = () => (
       WhatsApp: <a href="https://wa.me/5567999614879" style={styles.contactLink}>+55 (67) 99961-4879</a>
     </p>
     <p style={styles.text}>
-      Email: <a href="mailto:contato@teruyaconsultoria.com" style={styles.contactLink}>contato@teruyaconsultoria.com</a>
+      Email: <a href="mailto:dsa.teruya@gmail.com" style={styles.contactLink}>dsa.teruya@gmail.com</a>
     </p>
   </section>
 );
@@ -113,8 +117,8 @@ const Contact = () => (
 // Componente Rodapé
 const Footer = () => (
   <footer style={styles.footer}>
-    <p style={styles.text}>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
-    <p style={styles.text}>Desenvolvido por Teruya Consultoria</p>
+    <p style={styles.footerText}>© 2025 Teruya Consultoria. Todos os direitos reservados.</p>
+    <p style={styles.footerText}>Desenvolvido por Teruya Consultoria</p>
   </footer>
 );
 
@@ -141,7 +145,6 @@ const styles = {
   nav: {
     display: 'flex',
     gap: '15px',
-    flexWrap: 'wrap',
   },
   link: {
     color: 'white',
@@ -160,78 +163,49 @@ const styles = {
   whoWeAreRow: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexWrap: 'wrap',
     gap: '20px',
   },
-  card: {
+  textCard: {
+    flex: '2',
+    backgroundColor: '#ffffff',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'left',
+  },
+  imageCard: {
     flex: '1',
     backgroundColor: '#ffffff',
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     textAlign: 'center',
-    minWidth: '300px',
   },
   profileImage: {
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   },
   title: {
     fontSize: '2em',
     marginBottom: '10px',
-    textAlign: 'center',
+    textAlign: 'left',
   },
   text: {
     fontSize: '1em',
     color: '#555',
-  },
-  services: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '20px',
-    marginTop: '20px',
-  },
-  serviceCard: {
-    background: '#ffffff',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  },
-  clients: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '20px',
-    flexWrap: 'wrap',
-    marginTop: '20px',
-  },
-  clientLogo: {
-    background: '#eaeaea',
-    borderRadius: '8px',
-    width: '200px',
-    height: '150px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-  },
-  image: {
-    maxWidth: '100%',
-    maxHeight: '100%',
-    objectFit: 'contain',
-  },
-  contactLink: {
-    color: '#003366',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    fontSize: '1em',
+    marginBottom: '10px',
   },
   footer: {
     backgroundColor: '#003366',
     color: 'white',
     textAlign: 'center',
     padding: '20px 0',
+  },
+  footerText: {
+    margin: 0,
+    fontSize: '0.9em',
   },
 };
