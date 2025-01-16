@@ -86,10 +86,10 @@ const Contact = () => (
     <h1 style={styles.title}>Contato</h1>
     <p style={styles.text}>Entre em contato conosco para saber mais sobre nossas soluções.</p>
     <p style={styles.text}>
-      WhatsApp: <a href="https://wa.me/5567999614879" style={styles.link}>+55 (67) 99961-4879</a>
+      WhatsApp: <a href="https://wa.me/5567999614879" style={styles.contactLink}>+55 (67) 99961-4879</a>
     </p>
     <p style={styles.text}>
-      Email: <a href="dsa.teruya@gmail.com" style={styles.link}>dsa.teruya@gmail.com</a>
+      Email: <a href="mailto:dsa.teruya@gmail.com" style={styles.contactLink}>dsa.teruya@gmail.com</a>
     </p>
   </section>
 );
@@ -105,8 +105,8 @@ const Footer = () => (
 // Estilos
 const styles = {
   body: {
-    backgroundColor: '#f7fbff', // Azul muito claro para o fundo geral
-    color: '#333', // Cor padrão do texto
+    backgroundColor: '#f7fbff', // Fundo claro para o site
+    color: '#333', // Texto padrão
     margin: 0,
     fontFamily: 'Arial, sans-serif',
   },
@@ -137,7 +137,7 @@ const styles = {
     textAlign: 'center',
     marginBottom: '20px',
     borderRadius: '8px',
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff', // Fundo branco
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   services: {
@@ -147,14 +147,11 @@ const styles = {
     marginTop: '20px',
   },
   serviceCard: {
-    background: '#f9f9f9',
+    background: '#e0e0e0', // Cinza claro para os cards
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     transition: 'transform 0.3s ease',
-  },
-  serviceCardHover: {
-    transform: 'scale(1.05)',
   },
   clients: {
     display: 'flex',
@@ -190,5 +187,10 @@ const styles = {
   text: {
     fontSize: '1em',
     color: '#555',
+  },
+  contactLink: {
+    color: '#003366', // Azul escuro para os contatos
+    textDecoration: 'none',
+    fontWeight: 'bold',
   },
 };
