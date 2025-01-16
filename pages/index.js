@@ -26,7 +26,7 @@ export default function Home() {
 const Header = () => (
   <header style={styles.header}>
     <div style={styles.logoContainer}>
-      <img src="/logo-teruya.jpeg" alt="Teruya Consultoria Logo" style={styles.logo} />
+      <img src="/logo-teruya.jpg" alt="Teruya Consultoria Logo" style={styles.logo} />
     </div>
     <nav style={styles.nav}>
       <a href="#quem-somos" style={styles.link}>Quem Somos</a>
@@ -43,7 +43,7 @@ const WhoWeAre = () => (
     <div style={styles.container}>
       {/* Foto */}
       <div style={styles.photoContainer}>
-        <img src="/logo-teruya.jpeg" alt="Minha Foto" style={styles.photo} />
+        <img src="/logo-teruya.jpg" alt="Minha Foto" style={styles.photo} />
       </div>
 
       {/* Texto */}
