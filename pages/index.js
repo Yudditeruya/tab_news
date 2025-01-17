@@ -40,12 +40,7 @@ const Header = () => (
 // Componente Quem Somos
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
-    <div style={styles.container}>
-      {/* Foto */}
-      <div style={styles.photoContainerLeft}>
-        <img src="/logo-teruya.jpg" alt="Logo Teruya Consultoria" style={styles.largePhoto} />
-      </div>
-
+    <div style={styles.containerReverse}>
       {/* Texto */}
       <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
@@ -53,6 +48,11 @@ const WhoWeAre = () => (
           Na <strong>Teruya Consultoria</strong>, nosso propósito é transformar dados em insights estratégicos que impulsionam o sucesso dos nossos clientes. 
           Com mais de 6 anos de experiência, oferecemos soluções em Business Intelligence, automação e integração de dados.
         </p>
+      </div>
+
+      {/* Foto */}
+      <div style={styles.photoContainerRight}>
+        <img src="/logo-teruya.jpg" alt="Logo Teruya Consultoria" style={styles.largePhoto} />
       </div>
     </div>
   </section>
@@ -162,14 +162,15 @@ const styles = {
   section: {
     padding: '50px 20px',
   },
-  container: {
+  containerReverse: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     gap: '20px',
+    flexDirection: 'row-reverse',
   },
-  photoContainerLeft: {
+  photoContainerRight: {
     flex: 1,
     textAlign: 'center',
   },
