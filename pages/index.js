@@ -26,7 +26,7 @@ export default function Home() {
 const Header = () => (
   <header style={styles.header}>
     <div style={styles.logoContainer}>
-      <img src="/logo-teruya.jpg" alt="Teruya Consultoria Logo" style={styles.smallLogo} />
+      <h1 style={styles.logoText}>Teruya Consultoria</h1>
     </div>
     <nav style={styles.nav}>
       <a href="#quem-somos" style={styles.link}>Quem Somos</a>
