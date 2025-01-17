@@ -174,7 +174,7 @@ const styles = {
     textAlign: 'center',
   },
   largePhoto: {
-    width: '300px',
+    width: '450px',
     height: 'auto',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
