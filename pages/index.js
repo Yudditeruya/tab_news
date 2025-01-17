@@ -40,7 +40,7 @@ const Header = () => (
 // Componente Quem Somos
 const WhoWeAre = () => (
   <section id="quem-somos" style={styles.section}>
-    <div style={styles.containerReverse}>
+    <div style={styles.container}>
       {/* Texto */}
       <div style={styles.textContainer}>
         <h1 style={styles.title}>Quem Somos</h1>
@@ -162,13 +162,12 @@ const styles = {
   section: {
     padding: '50px 20px',
   },
-  containerReverse: {
+  container: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     gap: '20px',
-    flexDirection: 'row-reverse',
   },
   photoContainerRight: {
     flex: 1,
