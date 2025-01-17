@@ -26,7 +26,7 @@ export default function Home() {
 const Header = () => (
   <header style={styles.header}>
     <div style={styles.logoContainer}>
-      <img src="/logo-teruya.jpg" alt="Teruya Consultoria Logo" style={styles.logo} />
+      <img src="/logo-teruya.jpg" alt="Teruya Consultoria Logo" style={styles.smallLogo} />
     </div>
     <nav style={styles.nav}>
       <a href="#quem-somos" style={styles.link}>Quem Somos</a>
@@ -142,9 +142,9 @@ const styles = {
   },
   logoContainer: {
     display: 'flex',
-    alignItems: 'center',a
+    alignItems: 'center',
   },
-  logo: {
+  smallLogo: {
     width: '50px',
     height: 'auto',
   },
@@ -181,7 +181,7 @@ const styles = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   largePhoto: {
-    width: '120px',
+    width: '300px',
     height: 'auto',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
