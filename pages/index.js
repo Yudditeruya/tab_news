@@ -145,7 +145,7 @@ const styles = {
     alignItems: 'center',a
   },
   logo: {
-    width: '80px',
+    width: '50px',
     height: 'auto',
   },
   nav: {
@@ -181,7 +181,7 @@ const styles = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   largePhoto: {
-    width: '200px',
+    width: '120px',
     height: 'auto',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
